@@ -1,0 +1,22 @@
+<div class="text-center bg-light py-2">
+    <!-- <H1><%= repository.title %></H1> -->
+    <div class="d-flex justify-content-center my-3">
+        <div class="card" style="width: 18rem;">
+            <ul class="list-group list-group-flush">
+           
+              <li class="list-group-item"><span class="">Description: </span><%= repository.description %></li>
+              <li class="list-group-item"><span class="">Url: </span><%= repository.url %></li>
+              <li class="list-group-item"><span class="">Created at: </span> <%= repository.createdAt.toLocaleDateString() %></li>
+            </ul>
+        </div>
+    </div>
+    
+    
+   <!--  <div style="display: inline;">
+        <a class="btn btn-info m-1" href=".">All Repositories</a>
+        <a class="btn btn-primary m-1" href="edit/<%= repository.id %>">Edit</a>
+        <form  action="/api/repositories/<%=repository.id%>?_method=DELETE" method="POST" class="d-inline">
+            <button  type="submit" class="btn btn-danger">Delete</button>
+        </form>
+    </div> -->
+</div>

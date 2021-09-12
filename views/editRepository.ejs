@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <%- include('./partials/head.ejs'); %>
+</head>
+<body>
+
+<header>
+    <%- include('./partials/header'); %>
+</header>
+
+<main>
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col-md-6"><h1>My Repositories</h1></div>
+            <p>Darian Betancourt</p>
+        </div>
+        <!-- <hr> -->
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6 text-center  bg-light">
+                <div class="row">
+                    <h3 class="btn btn-outline-success" id="edit">Edit Repository</h3>
+                </div>
+                <form style="text-align: left;" method="POST" action="/api/repositories/<%= repository.id %>?_method=PUT">
+                <%- include('./partials/formRepository.ejs'); %>
+            </div>
+        </div>
+
+      
+        <p id="oldTitle" style="display: none;"><%=repository.title%></p>
+        <p id="oldDescription" style="display: none;"><%=repository.description%></p>
+        <p id="oldUrl" style="display: none;"><%=repository.url%></p>
+    </div>
+</main>
+
+<footer class="mt-3">
+    <%- include('./partials/footer'); %>
+</footer>
+
+    <%- include('scripts/editScript.ejs'); %>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<script>
+    let btnEdit             =   document.getElementById("edit")
+    let btnSubmit           =   document.getElementById("submit")
+    let oldTitle            =   document.getElementById("oldTitle");
+    let oldDescription      =   document.getElementById("oldDescription")
+    let oldUrl              =   document.getElementById("oldUrl")
+
+    let inputTitle          =   document.getElementById("title")
+    let inputDescription    =   document.getElementById("description")
+    let inputUrl            =   document.getElementById("url")
+    
+    inputTitle.value        =   oldTitle.textContent;
+    inputDescription.value  =   oldDescription.textContent;
+    inputUrl.value          =   oldUrl.textContent;
+
+    inputTitle.placeholder        =   oldTitle.textContent;
+    inputDescription.placeholder  =   oldDescription.textContent;
+    inputUrl.placeholder          =   oldUrl.textContent;
+
+    set_Enabled_Disabled(true);
+    btnEdit.addEventListener("click",()=>{set_Enabled_Disabled(false)});
+
+    function set_Enabled_Disabled(status) {
+        inputTitle.disabled         =   status;
+        inputDescription.disabled   =   status;
+        inputUrl.disabled           =   status;
+        btnSubmit.disabled          =   status;  
+    }
+</script>
